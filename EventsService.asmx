@@ -1,0 +1,1 @@
+<%@ WebService Language="C#" CodeBehind="EventsService.asmx.cs" Class="Laba5.EventsService" %> 
