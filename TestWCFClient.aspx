@@ -72,7 +72,6 @@
     
     <script type="text/javascript">
         $(document).ready(function () {
-            // Инициализация датапикера
             $('#datePickerContainer').datepicker({
                 format: 'dd.mm.yyyy',
                 language: 'ru',
@@ -82,7 +81,6 @@
                 orientation: "bottom"
             });
             
-            // Привязка события к TextBox
             $('#datePickerContainer').datepicker()
                 .on('changeDate', function (e) {
                     $('#<%= txtDate.ClientID %>').val(
@@ -90,7 +88,6 @@
                     );
                 });
             
-            // Очистка поля даты
             $('#clearDate').click(function() {
                 $('#<%= txtDate.ClientID %>').val('');
             });

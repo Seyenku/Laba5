@@ -7,7 +7,6 @@ namespace Laba5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Set the active class for the current page in the navigation
             string currentUrl = Request.Url.AbsolutePath.ToLower();
             
         }

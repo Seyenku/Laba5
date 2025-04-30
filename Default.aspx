@@ -67,7 +67,6 @@
     
     <script type="text/javascript">
         $(document).ready(function () {
-            // Инициализация датапикера
             $('#datePickerContainer').datepicker({
                 format: 'dd.mm.yyyy',
                 language: 'ru',
@@ -77,12 +76,10 @@
                 orientation: "bottom"
             });
             
-            // Очистка поля даты
             $('#clearDate').click(function() {
                 $('#datePicker').val('');
             });
             
-            // Универсальная функция поиска
             function performSearch() {
                 var date = $("#datePicker").val();
                 
@@ -93,26 +90,22 @@
                 }
             }
             
-            // Привязка к единой кнопке поиска
             $("#btnSearch").click(function () {
                 performSearch();
             });
             
-            // Привязка события нажатия Enter в поле даты
             $("#datePicker").keypress(function(e) {
-                if(e.which == 13) { // Enter key
+                if(e.which == 13) {
                     e.preventDefault();
                     performSearch();
                 }
             });
             
-            // Функция для поиска мероприятий
             function searchEvents(date) {
                 $("#loadingIndicator").show();
                 $("#results").hide();
                 $("#eventsContainer").empty();
                 
-                // ASMX сервис
                 $.ajax({
                     type: "POST",
                     url: "EventsService.asmx/GetEventsByDate",
@@ -131,7 +124,6 @@
                 });
             }
             
-            // Функция для отображения мероприятий
             function displayEvents(events) {
                 var container = $("#eventsContainer");
                 container.empty();
@@ -169,19 +161,16 @@
                 container.html(tableHtml);
             }
             
-            // Обработка ошибок
             function handleError(error) {
                 console.error("Error details:", error);
                 $("#results").show();
                 
                 var errorMessage = "Произошла ошибка при получении данных. ";
                 
-                // Try to extract more detailed error information
                 if (error.responseJSON && error.responseJSON.Message) {
                     errorMessage += error.responseJSON.Message;
                 } else if (error.responseText) {
                     try {
-                        // Try to parse the response text
                         var errorObj = JSON.parse(error.responseText);
                         if (errorObj.Message) {
                             errorMessage += errorObj.Message;
@@ -191,7 +180,6 @@
                             errorMessage += "Проверьте формат даты (дд.мм.гггг).";
                         }
                     } catch (e) {
-                        // If can't parse JSON, display the raw response if it's not too long
                         if (error.responseText.length < 100) {
                             errorMessage += error.responseText;
                         } else {
