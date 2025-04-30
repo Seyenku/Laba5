@@ -66,15 +66,6 @@
         </div>
     </main>
     
-    <!-- Добавляем стиль для кнопки поиска -->
-    <style>
-        .search-button::before {
-            content: "\F52A";
-            font-family: "bootstrap-icons";
-            margin-right: 0.5rem;
-        }
-    </style>
-    
     <!-- Подключение скриптов для Datepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ru.min.js"></script>

@@ -31,7 +31,7 @@
                     <div class="col-md-6 d-flex align-items-end">
                         <div class="d-grid gap-2 d-md-flex w-100">
                             <button class="btn btn-primary" type="button" id="btnSearch">
-                                <i class="bi bi-search me-1"></i> Найти по дате
+                                <i class="bi me-1"></i> Найти по дате
                             </button>
                         </div>
                     </div>
